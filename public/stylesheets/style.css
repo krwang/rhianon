@@ -45,6 +45,7 @@ textarea.form-control {
 #text {
 	border: 1px black dashed;
 	padding: 10px;
+	width: 750px;
 }
 
 #submit-button {
@@ -54,10 +55,19 @@ textarea.form-control {
 
 #submit-button input {
 	float: right;
+	margin-top: 10px;
 }
 
 
 .button-title {
 	font-size: 20px;
-	padding: 10px 0px 0px;
+	padding: 10px 0px 0px;	
+}
+
+#message input {
+	margin: 0px 5px;
+}
+
+.hidden {
+	display: none;
 }
