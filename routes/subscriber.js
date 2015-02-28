@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET subscriber listing. */
+/* POST subscriber listing. */
 router.post('/subscribe', function (req, res) {
 	var name = req.body.name;
 	var phoneNumber = req.body.phoneNumber;
 
-	Sub.find({name: name}, function (err, doc) {
+	Subscriber.find({name: name}, function (err, doc) {
 		if (err) {
 			res.send({
 				success: false,
@@ -20,7 +20,7 @@ router.post('/subscribe', function (req, res) {
 			});
 		}
 		else {
-			var sub = new Sub({name: name, phoneNumber: phoneNumber});
+			var sub = new Subscriber({name: name, phoneNumber: phoneNumber});
 			sub.save(function (err, doc) {
 				if (err) {
 					res.send({
@@ -37,5 +37,7 @@ router.post('/subscribe', function (req, res) {
 		}
 	});
 });
+
+/*GET subscriber listing */
 
 module.exports = router;

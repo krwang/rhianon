@@ -19,11 +19,9 @@ var adminSchema = mongoose.Schema({
 var announcementSchema = mongoose.Schema({
 	priority: Number,
 	text: String,
-	location: String,
-	dateTime: String
 });
 
-var subSchema = mongoose.Schema({
+var subscriberSchema = mongoose.Schema({
 	name: String,
 	phoneNumber: String
 });
@@ -32,10 +30,10 @@ var School = mongoose.model('School', schoolSchema);
 var Admin = mongoose.model('Admin', adminSchema);
 // var History = mongoose.model('History', historySchema);
 var Announcement = mongoose.model('Announcement', announcementSchema);
-var Sub = mongoose.model('Sub', subSchema);
+var Subscriber = mongoose.model('Subscriber', subscriberSchema);
 
 exports.School = School;
 exports.Admin = Admin;
 // exports.History = History;
 exports.Announcement = Announcement;
-exports.Sub = Sub;
+exports.Subscriber = Subscriber;
