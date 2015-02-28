@@ -7,7 +7,10 @@ var mongo = require('mongodb');
 var mongoose = require('mongoose');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var admin = require('./routes/admin');
+var history = require('./routes/history');
+var subscriber = require('./routes/subscriber');
+var announcement = require('./routes/announcement');
 
 var app = express();
 
@@ -19,7 +22,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
+app.use('/admin', admin);
+app.use('/history', history);
+app.use('/subscriber', subscriber);
+app.use('/announcement', announcement);
 
 require('./data-mongoose');
 
