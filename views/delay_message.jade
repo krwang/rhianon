@@ -1,0 +1,63 @@
+extends layout
+
+block content
+	div#header
+		h1 TITLE YAYAYYAY
+
+	ul.nav.nav-tabs
+		li.active(role='presentation')
+			a(href='#') Scripted
+		li
+			a(href='/home') Unscripted
+
+	div#container.container
+		div.row
+			div#left.col-md-2
+				div.button-title Category
+				form.radio
+					p
+						label
+							input(type='radio' name='category')
+							| Emergency
+					p
+						label
+							input(type='radio' name='category')
+							| Closings
+					p
+						label
+							input(type='radio' name='category')
+							| Delays
+
+				div.button-title Priority
+				form.radio
+					p
+						label
+							input(type='radio' name='priority')
+							| High
+					p
+						label
+							input(type='radio' name='priority')
+							| Medium 
+					p
+						label
+							input(type='radio' name='priority')
+							| Low
+
+			div#middle.col-md-10
+				div#text.input-group
+					div.input-group
+						span.input-group-addon
+							| School has been delayed due to 
+						input.form-control(type='text' placeholder='Reason')
+						span.input-group-addon
+							|and will open at
+						input.form-control(type='text' placeholder='Time')
+						span.input-group-addon
+							|.
+					div.input-group
+						input.form-control(type='text' placeholder='Further instructions or messages')
+						span.input-group-addon
+							|.
+
+					div#submit-button
+						input.btn.btn-default(type="submit" value="Send")

@@ -1,0 +1,66 @@
+extends layout
+
+block content
+	div#header
+		h1 TITLE YAYAYYAY
+
+	ul.nav.nav-tabs
+		li.active(role='presentation')
+			a(href='#') Scripted
+		li
+			a(href='/home') Unscripted
+
+	script(type="text/javascript").
+		/*function change_category() {
+			pass
+		}*/
+
+		window.onload = function() {
+			var form = document.getElementById('scripted-category').category;
+			var prev = null;
+			for (var i = 0; i < form.length; i++) {
+				form[i].onclick = function() {
+					if (this !== prev) {
+						prev = this;
+						change_category(prev.nextSibling.data);
+					}
+				}
+			}
+		}
+
+	div#container.container
+		div.row
+			div#left.col-md-2
+				div.button-title Category
+				form#scripted-category.radio
+					p
+						label
+							input(type='radio' name='category' checked='checked')
+							| Emergency
+					p
+						label
+							input(type='radio' name='category')
+							| Closings
+					p
+						label
+							input(type='radio' name='category')
+							| Delays
+
+			div#middle.col-md-10
+				div#text.input-group
+					div.input-group
+						span.input-group-addon
+							| There is a
+						input.form-control(type='text' placeholder='Type of Emergency')
+						span.input-group-addon
+							| in
+						input.form-control(type='text' placeholder='Location')
+						span.input-group-addon
+							|.
+					div.input-group
+						span.input-group-addon
+							| Please safely evacuate the building!
+						input.form-control(type='text' placeholder='Further instructions or messages')
+
+					div#submit-button
+						input.btn.btn-default(type="submit" value="Send")
