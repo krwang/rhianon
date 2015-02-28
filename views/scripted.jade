@@ -11,9 +11,15 @@ block content
 			a(href='/home') Unscripted
 
 	script(type="text/javascript").
-		/*function change_category() {
-			pass
-		}*/
+		function change_category(category) {
+			if (category == 'Emergency') {
+				window.location = '/scripted';
+			} else if (category == 'Closings') {
+				window.location = '/closing';
+			} else if (category == 'Delays') {
+				window.location = '/delay';
+			}
+		}
 
 		window.onload = function() {
 			var form = document.getElementById('scripted-category').category;
@@ -35,7 +41,7 @@ block content
 				form#scripted-category.radio
 					p
 						label
-							input(type='radio' name='category' checked='checked')
+							input(type='radio' name='category')
 							| Emergency
 					p
 						label
@@ -48,19 +54,7 @@ block content
 
 			div#middle.col-md-10
 				div#text.input-group
-					div.input-group
-						span.input-group-addon
-							| There is a
-						input.form-control(type='text' placeholder='Type of Emergency')
-						span.input-group-addon
-							| in
-						input.form-control(type='text' placeholder='Location')
-						span.input-group-addon
-							|.
-					div.input-group
-						span.input-group-addon
-							| Please safely evacuate the building!
-						input.form-control(type='text' placeholder='Further instructions or messages')
+					block message
 
 					div#submit-button
 						input.btn.btn-default(type="submit" value="Send")

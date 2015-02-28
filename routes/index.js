@@ -13,7 +13,7 @@ router.get('/home', function(req, res, next) {
 });
 
 router.get('/scripted', function(req, res, next) {
-	res.render('scripted');
+	res.render('emergency_message');
 });
 
 router.get('/closing', function(req, res, next) {
@@ -22,6 +22,7 @@ router.get('/closing', function(req, res, next) {
 
 router.get('/delay', function(req, res, next) {
 	res.render('delay_message');
+});
 
 router.get('/subscribe', function(req, res, next) {
 	res.render('subscribe');
