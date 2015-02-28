@@ -1,45 +1,53 @@
 extends layout
 
 block content
-	div#header
-		h1 TITLE YAYAYYAY
 	div#container.container
 		div.row
-			div#left.col-md-3
-				h2 Category
-				div.btn-group-vertical(role="group" data-toggle="buttons")
-					label.btn.btn-primary
-						input(type='checkbox', autocomplete='off')
-						| Emergency
-					label.btn.btn-primary
-						input(type='checkbox', autocomplete='off')
-						| Daily 
-					label.btn.btn-primary
-						input(type='checkbox', autocomplete='off')
-						| Faculty
-					label.btn.btn-primary
-						input(type='checkbox', autocomplete='off')
-						| Other
+			div#left.col-md-2
+				div.button-title Category
+				div.radio
+					p
+						label
+							input(type='radio')
+							| Emergency
+					p
+						label
+							input(type='radio')
+							| Daily 
+					p
+						label
+							input(type='radio')
+							| Faculty
+					p
+						label
+							input(type='radio')
+							| Other
 
-				h2 Priority
-				div.btn-group-vertical(role="group" data-toggle="buttons")
-					label.btn.btn-primary
-						input(type='checkbox', autocomplete='off')
-						| High
-					label.btn.btn-primary
-						input(type='checkbox', autocomplete='off')
-						| Medium 
-					label.btn.btn-primary
-						input(type='checkbox', autocomplete='off')
-						| Low
+				div.button-title Priority
+				div.radio
+					p
+						label
+							input(type='radio')
+							| High
+					p
+						label
+							input(type='radio')
+							| Medium 
+					p
+						label
+							input(type='radio')
+							| Low
 
-			#middle.col-md-6
-				textarea#message.form-control(placeholder='Enter text here...')
+			#middle.col-md-10
+				div#text
+					textarea#message.form-control(placeholder='Enter text here...')
+					div#submit-button
+						input.btn.btn-default(type="submit" value="Send")
 
 
 
 
-			#right.col-md-3
+			//- #right.col-md-3
 				h2 Archives
 				ul#archives.list-group
 					li.list-group-item Emergency

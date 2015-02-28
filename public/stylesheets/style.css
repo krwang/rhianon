@@ -11,18 +11,53 @@ a {
 	height: 1200px;
 }
 
+.container {
+	/*background-color: #B2B2B2;*/
+}
+
+#left, #middle, #right {
+	padding: 30px;
+}
+
 #left {
-	background-color: red;
 }
 
 #middle {
-	background-color: green;
 }
 
 #right {
-	background-color: blue;
+}
+
+.radio p {
+	padding: 5px;
+	margin: 0px;
+}
+
+label.input-group-addon {
+	display: block;
 }
 
 textarea.form-control {
 	height: 600px;
+	resize: none;
+}
+
+#text {
+	border: 1px black dashed;
+	padding: 10px;
+}
+
+#submit-button {
+	padding-top: 10px;
+	overflow: hidden
+}
+
+#submit-button input {
+	float: right;
+}
+
+
+.button-title {
+	font-size: 20px;
+	padding: 10px 0px 0px;
 }
