@@ -1,10 +1,11 @@
 var express = require('express');
 var router = express.Router();
-var twilio = require('path/to/twilio-node/lib');
+var twilio = require('twilio');
+var models = require('../data-mongoose');
 
 var accountSid = 'ACed50d0bf5af6f9a831f60066ed0a3e22';
-var authToken = "";
-var client = require('twilio')(accountSid, authToken);
+var authToken = "fdfd96d1cd7e25812b421bedf2e93d08";
+var client = new twilio.RestClient(accountSid, authToken);
  
 
 
@@ -15,7 +16,7 @@ router.post('/', function(req, res) {
 	
 
 	//creates new announcement:
-	var announcement = new Announcement({priority: priority, text: text});
+	var announcement = new models.Announcement({priority: priority, text: text});
 	announcement.save(function(err, doc) {
 		if (err) {
 			res.send({
