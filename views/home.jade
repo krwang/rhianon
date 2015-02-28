@@ -1,4 +1,48 @@
 extends layout
 
 block content
-  p blah blah
+	div#header
+		h1 TITLE YAYAYYAY
+	div#container.container
+		div.row
+			div#left.col-md-3
+				h2 Category
+				div.btn-group-vertical(role="group" data-toggle="buttons")
+					label.btn.btn-primary
+						input(type='checkbox', autocomplete='off')
+						| Emergency
+					label.btn.btn-primary
+						input(type='checkbox', autocomplete='off')
+						| Daily 
+					label.btn.btn-primary
+						input(type='checkbox', autocomplete='off')
+						| Faculty
+					label.btn.btn-primary
+						input(type='checkbox', autocomplete='off')
+						| Other
+
+				h2 Priority
+				div.btn-group-vertical(role="group" data-toggle="buttons")
+					label.btn.btn-primary
+						input(type='checkbox', autocomplete='off')
+						| High
+					label.btn.btn-primary
+						input(type='checkbox', autocomplete='off')
+						| Medium 
+					label.btn.btn-primary
+						input(type='checkbox', autocomplete='off')
+						| Low
+
+			#middle.col-md-6
+				textarea#message.form-control(placeholder='Enter text here...')
+
+
+
+
+			#right.col-md-3
+				h2 Archives
+				ul#archives.list-group
+					li.list-group-item Emergency
+					li.list-group-item Daily
+					li.list-group-item Faculty
+					li.list-group-item Other
