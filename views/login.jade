@@ -1,0 +1,31 @@
+extends layout
+
+block content
+	div#header
+		h3 Signup or login to an admin account to send announcements and alert to MIT
+	div.col-lg-6 
+		h2 Login
+		form
+			div.form-group
+				label Name
+				input.form-control#inp-login-name(type="text" placeholder="Enter Name")
+			div.form-group
+				label Password
+				input.form-control#inp-login-password(type="password" placeholder="Password")
+			a.btn.btn-primary#btn-login Login
+	div.col-lg-6 
+		h2 Signup
+		form
+			div.form-group
+				label Name
+				input.form-control#inp-signup-name(type="text" placeholder="Enter Name")
+			div.form-group
+				label Password
+				input.form-control#inp-signup-password(type="password" placeholder="Password")
+			div.form-group
+				label Email
+				input.form-control#inp-signup-email(type="email" placeholder="Email")
+			div.form-group
+				label Phone Number
+				input.form-control#inp-signup-phoneNumber(type="tel" placeholder="Phone Number")
+			a.btn.btn-primary#btn-signup Signup

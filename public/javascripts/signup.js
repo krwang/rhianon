@@ -12,7 +12,9 @@ $(document).ready(function() {
 			},
 			dataType: 'json',
 			success: function(data) {
+				console.log(data);
 				if (data.success) {
+					alert(data);
 					window.location.href = data.url;
 				}
 				else {
@@ -22,7 +24,7 @@ $(document).ready(function() {
 		});
 	}
 
-	$('#btn-signup').click(function() {
+	$('#btn-signup').click(function(e) {
 		name = $('#inp-signup-name').val();
 		password = $('#inp-signup-password').val();
 		email = $('#inp-signup-email').val();

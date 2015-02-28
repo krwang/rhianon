@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+var models = require('../data-mongoose');
+
 /* GET subscriber listing. */
 router.post('/subscribe', function (req, res) {
 	var name = req.body.name;

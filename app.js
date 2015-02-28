@@ -14,6 +14,11 @@ var announcement = require('./routes/announcement');
 
 var app = express();
 
+mongoose.connect('localhost:27017/rhianon')
+var db = mongoose.connection;
+
+app.listen(8000, "localhost");
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -26,8 +31,6 @@ app.use('/admin', admin);
 // app.use('/history', history);
 app.use('/subscriber', subscriber);
 app.use('/announcement', announcement);
-
-require('./data-mongoose');
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
