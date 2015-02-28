@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 
 var schoolSchema = mongoose.Schema({
+	name: String,
 	admins: [{type: mongoose.Schema.Types.ObjectId, ref: 'admin'}]
 });
 
@@ -11,9 +12,9 @@ var adminSchema = mongoose.Schema({
 	phoneNumber: String
 });
 
-var historySchema = mongoose.Schema({
-	announcements: [{type: mongoose.Schema.Types.ObjectId, ref: 'announcement'}]
-});
+// var historySchema = mongoose.Schema({
+// 	announcements: [{type: mongoose.Schema.Types.ObjectId, ref: 'announcement'}]
+// });
 
 var announcementSchema = mongoose.Schema({
 	priority: Number,
@@ -22,21 +23,19 @@ var announcementSchema = mongoose.Schema({
 	dateTime: String
 });
 
-var subscribersSchema = mongoose.Schema({
-	subscribers: [{
-		name: String,
-		phoneNumber: String
-	}]
+var subSchema = mongoose.Schema({
+	name: String,
+	phoneNumber: String
 });
 
 var School = mongoose.model('School', schoolSchema);
 var Admin = mongoose.model('Admin', adminSchema);
-var History = mongoose.model('History', historySchema);
+// var History = mongoose.model('History', historySchema);
 var Announcement = mongoose.model('Announcement', announcementSchema);
-var Subscribers = mongoose.model('Subscribers', subscribersSchema);
+var Sub = mongoose.model('Sub', subSchema);
 
 exports.School = School;
 exports.Admin = Admin;
-exports.History = History;
+// exports.History = History;
 exports.Announcement = Announcement;
-exports.Subscribers = Subscribers;
+exports.Sub = Sub;
