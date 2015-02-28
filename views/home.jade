@@ -1,0 +1,56 @@
+extends layout
+
+block content
+	div#container.container
+		div.row
+			div#left.col-md-2
+				div.button-title Category
+				div.radio
+					p
+						label
+							input(type='radio')
+							| Emergency
+					p
+						label
+							input(type='radio')
+							| Daily 
+					p
+						label
+							input(type='radio')
+							| Faculty
+					p
+						label
+							input(type='radio')
+							| Other
+
+				div.button-title Priority
+				div.radio
+					p
+						label
+							input(type='radio')
+							| High
+					p
+						label
+							input(type='radio')
+							| Medium 
+					p
+						label
+							input(type='radio')
+							| Low
+
+			#middle.col-md-10
+				div#text
+					textarea#message.form-control(placeholder='Enter text here...')
+					div#submit-button
+						input.btn.btn-default(type="submit" value="Send")
+
+
+
+
+			//- #right.col-md-3
+				h2 Archives
+				ul#archives.list-group
+					li.list-group-item Emergency
+					li.list-group-item Daily
+					li.list-group-item Faculty
+					li.list-group-item Other
