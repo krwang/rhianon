@@ -9,13 +9,14 @@ router.post('/subscribe', function (req, res) {
 	var phoneNumber = req.body.phoneNumber;
 
 	models.Subscriber.find({name: name}, function (err, doc) {
+		console.log(doc);
 		if (err) {
 			res.send({
 				success: false,
 				info: "Error when checking for sub on subscribe"
 			});
 		}
-		else if (doc) {
+		else if (doc && doc.length > 0) {
 			res.send({
 				success: false,
 				info: "A sub already exists with that name"

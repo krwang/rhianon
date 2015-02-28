@@ -45,8 +45,7 @@ router.post('/signup', function (req, res) {
 	var phoneNumber = req.body.phoneNumber;
 
 	models.Admin.findOne({name: name}, function (err, doc) {
-		console.log(err);
-		console.log("DOC: " + doc);
+		console.log(doc);
 		if (err) {
 			res.send({
 				success: false,
