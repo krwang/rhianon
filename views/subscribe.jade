@@ -1,0 +1,15 @@
+extends layout
+
+block content
+	div#header
+		h1 Subscribe
+	div
+		p Enter your infomation to receive real time alerts from MIT
+	form
+		div.form-group
+			label Name
+			input.form-control#inp-subscribe-name(type="text" placeholder="Enter Name")
+		div.form-group
+			label Phone Number
+			input.form-control#inp-subscribe-phoneNumber(type="tel" placeholder="Phone Number")
+		a.btn.btn-primary#btn-subscribe Subscribe!

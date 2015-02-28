@@ -20,7 +20,7 @@ $(document).ready(function() {
 		});
 	}
 
-	$('#btn-signup').click(function() {
+	$('#btn-login').click(function() {
 		var name = $('#inp-login-name').val();
 		var password = $('#inp-login-password').val();
 		login(name, password);

@@ -22,7 +22,7 @@ $(document).ready(function() {
 		});
 	}
 
-	$('#btn-signup').click(function() {
+	$('#btn-signup').click(function(e) {
 		name = $('#inp-signup-name').val();
 		password = $('#inp-signup-password').val();
 		email = $('#inp-signup-email').val();

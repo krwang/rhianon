@@ -24,14 +24,14 @@ $(document).ready(function() {
 	$('#btn-subscribe').click(function() {
 		name = $('#inp-subscribe-name').val();
 		phoneNumber = $('#inp-subscribe-phoneNumber').val();
-		signup(name, phoneNumber);
+		subscribe(name, phoneNumber);
 	});
 
 	$('#inp-subscribe-phoneNumber').keypress(function(e) {
 		if (e.keyCode === 13) {
 			name = $('#inp-subscribe-name').val();
 			phoneNumber = $('#inp-subscribe-phoneNumber').val();
-			signup(name, phoneNumber);
+			subscribe(name, phoneNumber);
 		}
 	});
 });

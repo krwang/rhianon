@@ -1,26 +1,29 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET subscriber listing. */
+var models = require('../data-mongoose');
+
+/* POST subscriber listing. */
 router.post('/subscribe', function (req, res) {
 	var name = req.body.name;
 	var phoneNumber = req.body.phoneNumber;
 
-	Sub.find({name: name}, function (err, doc) {
+	models.Subscriber.find({name: name}, function (err, doc) {
+		console.log(doc);
 		if (err) {
 			res.send({
 				success: false,
 				info: "Error when checking for sub on subscribe"
 			});
 		}
-		else if (doc) {
+		else if (doc && doc.length > 0) {
 			res.send({
 				success: false,
 				info: "A sub already exists with that name"
 			});
 		}
 		else {
-			var sub = new Sub({name: name, phoneNumber: phoneNumber});
+			var sub = new models.Subscriber({name: name, phoneNumber: phoneNumber});
 			sub.save(function (err, doc) {
 				if (err) {
 					res.send({
@@ -37,5 +40,7 @@ router.post('/subscribe', function (req, res) {
 		}
 	});
 });
+
+/*GET subscriber listing */
 
 module.exports = router;

@@ -8,9 +8,9 @@ head
 	link(rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css")
 	link(rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css")
 
+	script(src="http://code.jquery.com/jquery-1.10.2.js")
 
 	script(src='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
-	script(src="http://code.jquery.com/jquery-1.10.2.js")
 	script(src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.js")
 
 
@@ -20,6 +20,20 @@ head
 		window.onload = function() {
 			console.log("hi??");
 		}
-			
+
+	script(type='text/javascript' src='/javascripts/login.js')
+	script(type='text/javascript' src='/javascripts/signup.js')
+	script(type='text/javascript' src='/javascripts/subscribe.js')
+
 body
+<<<<<<< HEAD
 	block content
+=======
+	div.navbar.navbar-inverse
+			div.navbar-header
+				a.navbar-brand(href="/") OUR APP
+			div.navbar-collapse.collapse.navbar-inverse-collapse
+		div.container-fluid
+			div.text-center
+				block content
+>>>>>>> 62dd54a8ecab28a05934315b592a7465c8993941
