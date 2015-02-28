@@ -60,7 +60,7 @@ router.post('/signup', function (req, res) {
 			});
 		}
 		else {
-			var account = new Admin({name: name, password: password, email: email, phoneNumber: phoneNumber});
+			var account = new models.Admin({name: name, password: password, email: email, phoneNumber: phoneNumber});
 			account.save(function (err, doc) {
 				if (err) {
 					res.send({

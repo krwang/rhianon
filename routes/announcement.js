@@ -26,7 +26,7 @@ router.post('/', function(req, res) {
 		} 
 		else {
 			//find phone numbers to send events to
-			Subscriber.find({}).exec(function(err, allSubscribers) {
+			models.Subscriber.find({}).exec(function(err, allSubscribers) {
 				allSubscribers.forEach(function(subscriber) {
 					var phoneNumber = subscriber.phoneNumber;
 					if (priority == 1) {

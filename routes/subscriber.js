@@ -8,7 +8,7 @@ router.post('/subscribe', function (req, res) {
 	var name = req.body.name;
 	var phoneNumber = req.body.phoneNumber;
 
-	Subscriber.find({name: name}, function (err, doc) {
+	models.Subscriber.find({name: name}, function (err, doc) {
 		if (err) {
 			res.send({
 				success: false,
@@ -22,7 +22,7 @@ router.post('/subscribe', function (req, res) {
 			});
 		}
 		else {
-			var sub = new Subscriber({name: name, phoneNumber: phoneNumber});
+			var sub = new models.Subscriber({name: name, phoneNumber: phoneNumber});
 			sub.save(function (err, doc) {
 				if (err) {
 					res.send({

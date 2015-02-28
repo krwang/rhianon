@@ -10,7 +10,6 @@ $(document).ready(function() {
 			},
 			dataType: 'json',
 			success: function(data) {
-				console.log(data);
 				if (data.success) {
 					window.location.href = data.url;
 				}
