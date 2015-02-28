@@ -18,6 +18,7 @@ router.post('/', function(req, res) {
 	//creates new announcement:
 	var announcement = new models.Announcement({priority: priority, text: text});
 	announcement.save(function(err, doc) {
+		console.log("DC", doc);
 		if (err) {
 			res.send({
 				success: false,
@@ -25,8 +26,10 @@ router.post('/', function(req, res) {
 			});
 		} 
 		else {
+			console.log("works");
 			//find phone numbers to send events to
 			models.Subscriber.find({}).exec(function(err, allSubscribers) {
+				console.log("allSubscribers", allSubscribers);
 				allSubscribers.forEach(function(subscriber) {
 					var phoneNumber = subscriber.phoneNumber;
 					if (priority == 1) {
@@ -39,6 +42,8 @@ router.post('/', function(req, res) {
 					    //to: phoneNumber
 					    from: "+15005550006"
 					}, function(err, sms) {
+						console.log("SMS", sms);
+						console.log("err", err);
 					    process.stdout.write(sms.sid);
 					});
 				});
