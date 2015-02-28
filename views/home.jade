@@ -1,44 +1,53 @@
 extends layout
 
 block content
+	div#header
+		h1 TITLE YAYAYYAY
+
+	ul.nav.nav-tabs
+		li(role='presentation')
+			a(href='/scripted') Scripted
+		li.active(role='presentation')
+			a(href='#') Unscripted
+
 	div#container.container
 		div.row
 			div#left.col-md-2
 				div.button-title Category
-				div.radio
+				form.radio
 					p
 						label
-							input(type='radio')
+							input(type='radio' name='category')
 							| Emergency
 					p
 						label
-							input(type='radio')
+							input(type='radio' name='category')
 							| Daily 
 					p
 						label
-							input(type='radio')
+							input(type='radio' name='category')
 							| Faculty
 					p
 						label
-							input(type='radio')
+							input(type='radio' name='category')
 							| Other
 
 				div.button-title Priority
-				div.radio
+				form.radio
 					p
 						label
-							input(type='radio')
+							input(type='radio' name='priority')
 							| High
 					p
 						label
-							input(type='radio')
+							input(type='radio' name='priority')
 							| Medium 
 					p
 						label
-							input(type='radio')
+							input(type='radio' name='priority')
 							| Low
 
-			#middle.col-md-10
+			div#middle.col-md-10
 				div#text
 					textarea#message.form-control(placeholder='Enter text here...')
 					div#submit-button
