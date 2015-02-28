@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 
 var routes = require('./routes/index');
 var admin = require('./routes/admin');
-var history = require('./routes/history');
+// var history = require('./routes/history');
 var subscriber = require('./routes/subscriber');
 var announcement = require('./routes/announcement');
 
@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/admin', admin);
-app.use('/history', history);
+// app.use('/history', history);
 app.use('/subscriber', subscriber);
 app.use('/announcement', announcement);
 

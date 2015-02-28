@@ -6,7 +6,7 @@ router.post('/subscribe', function (req, res) {
 	var name = req.body.name;
 	var phoneNumber = req.body.phoneNumber;
 
-	Sub.find({name: name}, function (req, res) {
+	Sub.find({name: name}, function (err, doc) {
 		if (err) {
 			res.send({
 				success: false,
@@ -25,7 +25,7 @@ router.post('/subscribe', function (req, res) {
 				if (err) {
 					res.send({
 						success: false,
-						info: "Error when creating new sub on subscribe";
+						info: "Error when creating new sub on subscribe"
 					});
 				}
 				else {
