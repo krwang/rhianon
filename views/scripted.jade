@@ -31,6 +31,15 @@ block content
 						change_category(prev.nextSibling.data);
 					}
 				}
+				var category = prev.nextSibling.data;
+				if (category == 'Emergency') {
+					this.setAttribute('checked', 'checked');
+				} else if (category == 'Closings') {
+					this.setAttribute('checked', 'checked');
+				} else if (category == 'Delays') {
+					this.setAttribute('checked', 'checked');
+				}
+
 			}
 		}
 
